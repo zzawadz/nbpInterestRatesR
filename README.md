@@ -25,7 +25,7 @@ pacman::p_load_gh("zzawadz/nbpInterestRatesR")
 pacman::p_load_gh("zzawadz/nbpInterestRatesR")
 options(max.print = 20)
 
-get_interest_rates()
+get_nbp_interest_rates()
 ```
 
 ```
@@ -41,7 +41,7 @@ get_interest_rates()
 ```r
 options(max.print = 5)
 # reference rate:
-get_interest_rates("ref")
+get_nbp_interest_rates("ref")
 ```
 
 ```
@@ -79,7 +79,7 @@ get_max_loan()
 options(max.print = 30)
 
 # get data:
-ret = get_interest_rates()
+ret = get_nbp_interest_rates()
 
 # Convert xts to tbl and keep the date
 xts2tbl(ret)
