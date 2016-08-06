@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{get_interest_rates}
 \alias{get_interest_rates}
-\title{Download interest rates from Polish National Bank}
+\title{Download interest rates from National Bank of Poland.}
 \usage{
 get_interest_rates(types = c("ref", "lom", "dep", "red"))
 }
@@ -13,7 +13,7 @@ get_interest_rates(types = c("ref", "lom", "dep", "red"))
 xts object.
 }
 \description{
-This functions download various interest rates from NBP (Polish National Bank) as a xts object.
+This functions download various interest rates from NBP (National Bank of Poland) as a xts object.
 }
 \examples{
 

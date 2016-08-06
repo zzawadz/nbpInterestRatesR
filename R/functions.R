@@ -1,6 +1,6 @@
-#' Download interest rates from Polish National Bank
+#' Download interest rates from National Bank of Poland.
 #'
-#' This functions download various interest rates from NBP (Polish National Bank) as a xts object.
+#' This functions download various interest rates from NBP (National Bank of Poland) as a xts object.
 #'
 #' @param types DESCRIPTION.
 #'

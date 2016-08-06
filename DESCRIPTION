@@ -1,8 +1,8 @@
 Package: nbpInterestRatesR
-Title: What the Package Does (one line, title case)
-Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Title: Interest rates from National Bank of Poland.
+Version: 0.1.0
+Authors@R: person("Zygmunt", "Zawadzki", email = "zygmunt@zstat.pl", role = c("aut", "cre"))
+Description: Simple package for downloading interest rates from National Bank of Poland.
 Depends:
     dplyr,
     xts
