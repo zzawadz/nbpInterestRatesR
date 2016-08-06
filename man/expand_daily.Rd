@@ -19,7 +19,7 @@ Expand xts do daily periodicity.
 }
 \examples{
 
-x = get_interest_rates()
+x = get_nbp_interest_rates()
 expand_daily(x)
 
 }

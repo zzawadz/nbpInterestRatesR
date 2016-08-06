@@ -17,7 +17,7 @@ Adds column with dates to the first position to after conversion to tibble.
 }
 \examples{
 
-x = get_interest_rates()
+x = get_nbp_interest_rates()
 xts2tbl(x)
 
 dx = expand_daily(x)
