@@ -34,14 +34,19 @@ get_interest_rates = function(types = c("ref","lom","dep","red"))
 
 #' Expand xts do daily periodicity.
 #'
-#' FUNCTION DESCRIPTION
+#' Expand xts do daily periodicity.
 #'
 #' @param x xts object
 #' @param enddate last date.
 #'
-#' @return RETURN DESCRIPTION
+#' @importFrom lubridate today ymd
+#' @export
+#' @return xts
 #' @examples
-#' # ADD EXAMPLES HERE
+#'
+#' x = get_interest_rates()
+#' expand_daily(x)
+#'
 expand_daily = function(x, enddate = "today")
 {
   if(enddate == "today")
@@ -72,6 +77,13 @@ expand_daily = function(x, enddate = "today")
 #' @export
 #' @return tbl_df object.
 #' @examples
+#'
+#' x = get_interest_rates()
+#' xts2tbl(x)
+#'
+#' dx = expand_daily(x)
+#' xts2tbl(dx)
+#'
 #'
 xts2tbl = function(x)
 {
