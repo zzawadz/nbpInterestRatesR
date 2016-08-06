@@ -39,6 +39,8 @@ get_interest_rates = function(types = c("ref","lom","dep","red"))
 #' @param x xts object
 #' @param enddate last date.
 #'
+#' @importFrom xts xts
+#' @importFrom zoo na.locf
 #' @importFrom lubridate today ymd
 #' @export
 #' @return xts
@@ -75,6 +77,8 @@ expand_daily = function(x, enddate = "today")
 #' @param x xts object.
 #'
 #' @export
+#' @importFrom zoo index
+#' @importFrom dplyr bind_cols data_frame as_data_frame
 #' @return tbl_df object.
 #' @examples
 #'

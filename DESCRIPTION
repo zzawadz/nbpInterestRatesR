@@ -6,10 +6,11 @@ Description: Simple package for downloading interest rates from National Bank of
 Depends:
     dplyr,
     xts
-License: What license is it under?
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Imports:
     xml2,
-    lubridate
+    lubridate,
+    zoo
 RoxygenNote: 5.0.1
