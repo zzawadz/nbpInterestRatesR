@@ -96,3 +96,26 @@ xts2tbl = function(x)
 }
 
 
+
+#' Maximum interest rates for loans in Poland
+#'
+#' Get time series with the maximum interest rates for loans in Poland.
+#'
+#' @export
+#' @return RETURN DESCRIPTION
+#' @examples
+#'
+#' get_max_loan()
+#'
+get_max_loan = function()
+{
+  ir = get_interest_rates(c("ref","lom"))
+  lom = (ir[,"lom"] * 4)["/2015"]
+  colnames(lom) = "maxLoan"
+
+  ref = cbind(ir[,"ref"]["2015/"],xts(NA, order.by = ymd("2016-01-01")))
+
+  ref = (na.locf(ref[,1])["2016/"] + 3.5) * 2
+
+  rbind(lom, ref)
+}

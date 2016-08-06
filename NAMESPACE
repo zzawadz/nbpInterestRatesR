@@ -2,6 +2,7 @@
 
 export(expand_daily)
 export(get_interest_rates)
+export(get_max_loan)
 export(xts2tbl)
 importFrom(dplyr,as_data_frame)
 importFrom(dplyr,bind_cols)
