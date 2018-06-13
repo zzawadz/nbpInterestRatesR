@@ -13,6 +13,6 @@ Imports:
     xml2,
     lubridate,
     zoo
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 Suggests: covr,
     testthat

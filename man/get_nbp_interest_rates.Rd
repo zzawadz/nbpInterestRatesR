@@ -21,4 +21,3 @@ get_nbp_interest_rates("ref")
 get_nbp_interest_rates(c("ref","lom"))
 
 }
-

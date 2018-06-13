@@ -23,4 +23,3 @@ x = get_nbp_interest_rates()
 expand_daily(x)
 
 }
-

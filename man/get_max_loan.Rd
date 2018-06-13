@@ -20,4 +20,3 @@ Before 2016-01-01 maximum interest rate for loans in Poland was defined as a 4 *
 get_max_loan()
 
 }
-
