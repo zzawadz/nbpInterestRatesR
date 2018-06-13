@@ -17,7 +17,7 @@ This functions download various interest rates from NBP (National Bank of Poland
 }
 \examples{
 
-get_nbp_interest_rates("ref")
-get_nbp_interest_rates(c("ref","lom"))
+tail(get_nbp_interest_rates("ref"))
+tail(get_nbp_interest_rates(c("ref","lom")))
 
 }

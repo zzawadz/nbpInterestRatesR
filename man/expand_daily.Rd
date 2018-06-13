@@ -20,6 +20,6 @@ Expand xts do daily periodicity.
 \examples{
 
 x = get_nbp_interest_rates()
-expand_daily(x)
+tail(expand_daily(x))
 
 }

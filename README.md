@@ -1,116 +1,87 @@
+[![Project Status: Active - The project has reached a stable, usable
+state and is being actively
+developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Travis-CI Build
+Status](https://travis-ci.org/zzawadz/nbpInterestRatesR.svg?branch=master)](https://travis-ci.org/zzawadz/nbpInterestRatesR)
+[![AppVeyor Build
+Status](https://ci.appveyor.com/api/projects/status/github/zzawadz/nbpInterestRatesR?branch=master&svg=true)](https://ci.appveyor.com/project/zzawadz/nbpInterestRatesR)
+[![Coverage
+Status](https://img.shields.io/codecov/c/github/zzawadz/nbpInterestRatesR/master.svg)](https://codecov.io/github/zzawadz/nbpInterestRatesR?branch=master)
 
+Installation:
+=============
 
-[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
-[![Travis-CI Build Status](https://travis-ci.org/zzawadz/nbpInterestRatesR.svg?branch=master)](https://travis-ci.org/zzawadz/nbpInterestRatesR)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/zzawadz/nbpInterestRatesR?branch=master&svg=true)](https://ci.appveyor.com/project/zzawadz/nbpInterestRatesR)
-[![Coverage Status](https://img.shields.io/codecov/c/github/zzawadz/nbpInterestRatesR/master.svg)](https://codecov.io/github/zzawadz/nbpInterestRatesR?branch=master)
+    # devtools
+    devtools::install_github("zzawadz/nbpInterestRatesR")
 
-# Installation:
+    # Or you can use pacman:
+    pacman::p_load_gh("zzawadz/nbpInterestRatesR")
 
-
-```r
-# devtools
-devtools::install_github("zzawadz/nbpInterestRatesR")
-
-# Or you can use pacman:
-pacman::p_load_gh("zzawadz/nbpInterestRatesR")
-```
-
-# Usage:
+Usage:
+======
 
 ### Interest rates from NBP website:
 
+    pacman::p_load_gh("zzawadz/nbpInterestRatesR")
 
-```r
-pacman::p_load_gh("zzawadz/nbpInterestRatesR")
-options(max.print = 20)
+    tail(get_nbp_interest_rates())
 
-get_nbp_interest_rates()
-```
+    ##             ref  lom  dep  red
+    ## 2013-03-07 3.25 4.75 1.75 3.50
+    ## 2013-05-09 3.00 4.50 1.50 3.25
+    ## 2013-06-06 2.75 4.25 1.25 3.00
+    ## 2013-07-04 2.50 4.00 1.00 2.75
+    ## 2014-10-09 2.00 3.00 1.00 2.25
+    ## 2015-03-05 1.50 2.50 0.50 1.75
 
-```
-##              ref   lom  dep   red
-## 1998-02-26 24.00 27.00   NA 24.50
-## 1998-04-23 23.00 27.00   NA 24.50
-## 1998-05-21 21.50 26.00   NA 23.50
-## 1998-07-17 19.00 24.00   NA 21.50
-## 1998-09-10 18.00 24.00   NA 21.50
-##  [ reached getOption("max.print") -- omitted 68 rows ]
-```
+    # reference rate:
+    tail(get_nbp_interest_rates("ref"))
 
-```r
-options(max.print = 5)
-# reference rate:
-get_nbp_interest_rates("ref")
-```
-
-```
-##              ref
-## 1998-02-26 24.00
-## 1998-04-23 23.00
-## 1998-05-21 21.50
-## 1998-07-17 19.00
-## 1998-09-10 18.00
-##  [ reached getOption("max.print") -- omitted 68 rows ]
-```
+    ##             ref
+    ## 2013-03-07 3.25
+    ## 2013-05-09 3.00
+    ## 2013-06-06 2.75
+    ## 2013-07-04 2.50
+    ## 2014-10-09 2.00
+    ## 2015-03-05 1.50
 
 ### Maximum interest rate for loans in Poland
 
+    tail(get_max_loan())
 
-```r
-options(max.print = 5)
-get_max_loan()
-```
-
-```
-##            maxLoan
-## 1998-02-26     108
-## 1998-04-23     108
-## 1998-05-21     104
-## 1998-07-17      96
-## 1998-09-10      96
-##  [ reached getOption("max.print") -- omitted 69 rows ]
-```
+    ##            maxLoan
+    ## 2013-05-09      18
+    ## 2013-06-06      17
+    ## 2013-07-04      16
+    ## 2014-10-09      12
+    ## 2015-03-05      10
+    ## 2016-01-01      10
 
 ### Utility functions:
 
+    # get data:
+    ret = get_nbp_interest_rates()
 
-```r
-options(max.print = 30)
+    # Convert xts to tbl and keep the date
+    tail(xts2tbl(ret))
 
-# get data:
-ret = get_nbp_interest_rates()
+    ## # A tibble: 6 x 5
+    ##   date         ref   lom   dep   red
+    ##   <date>     <dbl> <dbl> <dbl> <dbl>
+    ## 1 2013-03-07  3.25  4.75 1.75   3.50
+    ## 2 2013-05-09  3.00  4.50 1.50   3.25
+    ## 3 2013-06-06  2.75  4.25 1.25   3.00
+    ## 4 2013-07-04  2.50  4.00 1.00   2.75
+    ## 5 2014-10-09  2.00  3.00 1.00   2.25
+    ## 6 2015-03-05  1.50  2.50 0.500  1.75
 
-# Convert xts to tbl and keep the date
-xts2tbl(ret)
-```
+    # expand to daily data:
+    tail(expand_daily(ret))
 
-```
-## # A tibble: 73 x 5
-##          date   ref   lom   dep   red
-##        <date> <dbl> <dbl> <dbl> <dbl>
-## 1  1998-02-26  24.0  27.0    NA 24.50
-## 2  1998-04-23  23.0  27.0    NA 24.50
-## 3  1998-05-21  21.5  26.0    NA 23.50
-## 4  1998-07-17  19.0  24.0    NA 21.50
-## 5  1998-09-10  18.0  24.0    NA 21.50
-##  [ reached getOption("max.print") -- omitted 5 rows ]
-## # ... with 63 more rows
-```
-
-```r
-# expand to daily data:
-expand_daily(ret)
-```
-
-```
-##              ref   lom  dep   red
-## 1998-02-26 24.00 27.00   NA 24.50
-## 1998-02-27 24.00 27.00   NA 24.50
-## 1998-02-28 24.00 27.00   NA 24.50
-## 1998-03-01 24.00 27.00   NA 24.50
-## 1998-03-02 24.00 27.00   NA 24.50
-## 1998-03-03 24.00 27.00   NA 24.50
-## 1998-03-04 24.00 27.00   NA 24.50
-##  [ reached getOption("max.print") -- omitted 6730 rows ]
-```
+    ##            ref lom dep  red
+    ## 2018-06-08 1.5 2.5 0.5 1.75
+    ## 2018-06-09 1.5 2.5 0.5 1.75
+    ## 2018-06-10 1.5 2.5 0.5 1.75
+    ## 2018-06-11 1.5 2.5 0.5 1.75
+    ## 2018-06-12 1.5 2.5 0.5 1.75
+    ## 2018-06-13 1.5 2.5 0.5 1.75

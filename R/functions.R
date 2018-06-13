@@ -10,8 +10,8 @@
 #' @importFrom lubridate ymd
 #' @examples
 #'
-#' get_nbp_interest_rates("ref")
-#' get_nbp_interest_rates(c("ref","lom"))
+#' tail(get_nbp_interest_rates("ref"))
+#' tail(get_nbp_interest_rates(c("ref","lom")))
 #'
 get_nbp_interest_rates = function(types = c("ref","lom","dep","red"))
 {
@@ -47,7 +47,7 @@ get_nbp_interest_rates = function(types = c("ref","lom","dep","red"))
 #' @examples
 #'
 #' x = get_nbp_interest_rates()
-#' expand_daily(x)
+#' tail(expand_daily(x))
 #'
 expand_daily = function(x, enddate = "today")
 {
@@ -83,10 +83,10 @@ expand_daily = function(x, enddate = "today")
 #' @examples
 #'
 #' x = get_nbp_interest_rates()
-#' xts2tbl(x)
+#' tail(xts2tbl(x))
 #'
 #' dx = expand_daily(x)
-#' xts2tbl(dx)
+#' tail(xts2tbl(dx))
 #'
 #'
 xts2tbl = function(x)
@@ -111,7 +111,7 @@ xts2tbl = function(x)
 #' @export
 #' @examples
 #'
-#' get_max_loan()
+#' tail(get_max_loan())
 #'
 get_max_loan = function()
 {

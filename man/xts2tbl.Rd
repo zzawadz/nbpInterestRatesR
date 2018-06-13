@@ -18,10 +18,10 @@ Adds column with dates to the first position to after conversion to tibble.
 \examples{
 
 x = get_nbp_interest_rates()
-xts2tbl(x)
+tail(xts2tbl(x))
 
 dx = expand_daily(x)
-xts2tbl(dx)
+tail(xts2tbl(dx))
 
 
 }

@@ -6,7 +6,7 @@ Description: Simple package for downloading interest rates from National Bank of
 Depends:
     dplyr,
     xts
-License: MIT + file LICENSE
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
 Imports:
