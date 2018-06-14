@@ -1,8 +1,9 @@
 Package: nbpInterestRatesR
 Title: Interest rates from National Bank of Poland
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: person("Zygmunt", "Zawadzki", email = "zygmunt@zstat.pl", role = c("aut", "cre"))
 Description: Simple package for downloading interest rates from National Bank of Poland.
+Date: 2018-06-14
 Depends:
     dplyr,
     xts

@@ -28,7 +28,7 @@ get_nbp_interest_rates = function(types = c("ref","lom","dep","red"))
   }
 
   allRes = lapply(types, .get_rates)
-  Reduce(cbind, allRes)
+  Reduce(cbind, allRes) / 100
 }
 
 

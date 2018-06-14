@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nbpInterestRatesR</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.1.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.0</span>
       </span>
     </div>
 
@@ -123,23 +123,24 @@
     <pre class="examples"><div class='input'>
 <span class='no'>x</span> <span class='kw'>=</span> <span class='fu'><a href='get_nbp_interest_rates.html'>get_nbp_interest_rates</a></span>()
 <span class='fu'>tail</span>(<span class='fu'>xts2tbl</span>(<span class='no'>x</span>))</div><div class='output co'>#&gt; # A tibble: 6 x 5
-#&gt;   date         ref   lom   dep   red
-#&gt;   &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-#&gt; 1 2013-03-07  3.25  4.75 1.75   3.50
-#&gt; 2 2013-05-09  3.00  4.50 1.50   3.25
-#&gt; 3 2013-06-06  2.75  4.25 1.25   3.00
-#&gt; 4 2013-07-04  2.50  4.00 1.00   2.75
-#&gt; 5 2014-10-09  2.00  3.00 1.00   2.25
-#&gt; 6 2015-03-05  1.50  2.50 0.500  1.75</div><div class='input'>
-<span class='no'>dx</span> <span class='kw'>=</span> <span class='fu'><a href='expand_daily.html'>expand_daily</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Unrecognized time zone ''</span></div><div class='input'><span class='fu'>tail</span>(<span class='fu'>xts2tbl</span>(<span class='no'>dx</span>))</div><div class='output co'>#&gt; # A tibble: 6 x 5
-#&gt;   date         ref   lom   dep   red
-#&gt;   &lt;date&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-#&gt; 1 2018-06-08  1.50  2.50 0.500  1.75
-#&gt; 2 2018-06-09  1.50  2.50 0.500  1.75
-#&gt; 3 2018-06-10  1.50  2.50 0.500  1.75
-#&gt; 4 2018-06-11  1.50  2.50 0.500  1.75
-#&gt; 5 2018-06-12  1.50  2.50 0.500  1.75
-#&gt; 6 2018-06-13  1.50  2.50 0.500  1.75</div><div class='input'>
+#&gt;   date          ref    lom     dep    red
+#&gt;   &lt;date&gt;      &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+#&gt; 1 2013-03-07 0.0325 0.0475 0.0175  0.0350
+#&gt; 2 2013-05-09 0.0300 0.0450 0.0150  0.0325
+#&gt; 3 2013-06-06 0.0275 0.0425 0.0125  0.0300
+#&gt; 4 2013-07-04 0.0250 0.0400 0.0100  0.0275
+#&gt; 5 2014-10-09 0.0200 0.0300 0.0100  0.0225
+#&gt; 6 2015-03-05 0.0150 0.0250 0.00500 0.0175</div><div class='input'>
+<span class='no'>dx</span> <span class='kw'>=</span> <span class='fu'><a href='expand_daily.html'>expand_daily</a></span>(<span class='no'>x</span>)
+<span class='fu'>tail</span>(<span class='fu'>xts2tbl</span>(<span class='no'>dx</span>))</div><div class='output co'>#&gt; # A tibble: 6 x 5
+#&gt;   date          ref    lom     dep    red
+#&gt;   &lt;date&gt;      &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+#&gt; 1 2018-06-09 0.0150 0.0250 0.00500 0.0175
+#&gt; 2 2018-06-10 0.0150 0.0250 0.00500 0.0175
+#&gt; 3 2018-06-11 0.0150 0.0250 0.00500 0.0175
+#&gt; 4 2018-06-12 0.0150 0.0250 0.00500 0.0175
+#&gt; 5 2018-06-13 0.0150 0.0250 0.00500 0.0175
+#&gt; 6 2018-06-14 0.0150 0.0250 0.00500 0.0175</div><div class='input'>
 
 </div></pre>
   </div>
