@@ -1,4 +1,4 @@
 library(testthat)
-library(nbpInterestRatesR)
+library(nbpir)
 
-test_check("nbpInterestRatesR")
+test_check("nbpir")

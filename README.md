@@ -2,27 +2,27 @@
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Travis-CI Build
-Status](https://travis-ci.org/zzawadz/nbpInterestRatesR.svg?branch=master)](https://travis-ci.org/zzawadz/nbpInterestRatesR)
+Status](https://travis-ci.org/zzawadz/nbpir.svg?branch=master)](https://travis-ci.org/zzawadz/nbpir)
 [![AppVeyor Build
-Status](https://ci.appveyor.com/api/projects/status/github/zzawadz/nbpInterestRatesR?branch=master&svg=true)](https://ci.appveyor.com/project/zzawadz/nbpInterestRatesR)
+Status](https://ci.appveyor.com/api/projects/status/github/zzawadz/nbpir?branch=master&svg=true)](https://ci.appveyor.com/project/zzawadz/nbpir)
 [![Coverage
-Status](https://img.shields.io/codecov/c/github/zzawadz/nbpInterestRatesR/master.svg)](https://codecov.io/github/zzawadz/nbpInterestRatesR?branch=master)
+Status](https://img.shields.io/codecov/c/github/zzawadz/nbpir/master.svg)](https://codecov.io/github/zzawadz/nbpir?branch=master)
 
 Installation:
 =============
 
     # devtools
-    devtools::install_github("zzawadz/nbpInterestRatesR")
+    devtools::install_github("zzawadz/nbpir")
 
     # Or you can use pacman:
-    pacman::p_load_gh("zzawadz/nbpInterestRatesR")
+    pacman::p_load_gh("zzawadz/nbpir")
 
 Usage:
 ======
 
 ### Interest rates from NBP website:
 
-    pacman::p_load_gh("zzawadz/nbpInterestRatesR")
+    pacman::p_load_gh("zzawadz/nbpir")
 
     tail(get_nbp_interest_rates())
 
@@ -79,9 +79,9 @@ Usage:
     tail(expand_daily(ret))
 
     ##              ref   lom   dep    red
-    ## 2018-06-09 0.015 0.025 0.005 0.0175
-    ## 2018-06-10 0.015 0.025 0.005 0.0175
-    ## 2018-06-11 0.015 0.025 0.005 0.0175
-    ## 2018-06-12 0.015 0.025 0.005 0.0175
     ## 2018-06-13 0.015 0.025 0.005 0.0175
     ## 2018-06-14 0.015 0.025 0.005 0.0175
+    ## 2018-06-15 0.015 0.025 0.005 0.0175
+    ## 2018-06-16 0.015 0.025 0.005 0.0175
+    ## 2018-06-17 0.015 0.025 0.005 0.0175
+    ## 2018-06-18 0.015 0.025 0.005 0.0175

@@ -3,18 +3,18 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Travis-CI Build Status](https://travis-ci.org/zzawadz/nbpInterestRatesR.svg?branch=master)](https://travis-ci.org/zzawadz/nbpInterestRatesR)
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/zzawadz/nbpInterestRatesR?branch=master&svg=true)](https://ci.appveyor.com/project/zzawadz/nbpInterestRatesR)
-[![Coverage Status](https://img.shields.io/codecov/c/github/zzawadz/nbpInterestRatesR/master.svg)](https://codecov.io/github/zzawadz/nbpInterestRatesR?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/zzawadz/nbpir.svg?branch=master)](https://travis-ci.org/zzawadz/nbpir)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/zzawadz/nbpir?branch=master&svg=true)](https://ci.appveyor.com/project/zzawadz/nbpir)
+[![Coverage Status](https://img.shields.io/codecov/c/github/zzawadz/nbpir/master.svg)](https://codecov.io/github/zzawadz/nbpir?branch=master)
 
 # Installation:
 
 ```{r, eval=FALSE}
 # devtools
-devtools::install_github("zzawadz/nbpInterestRatesR")
+devtools::install_github("zzawadz/nbpir")
 
 # Or you can use pacman:
-pacman::p_load_gh("zzawadz/nbpInterestRatesR")
+pacman::p_load_gh("zzawadz/nbpir")
 ```
 
 # Usage:
@@ -22,7 +22,7 @@ pacman::p_load_gh("zzawadz/nbpInterestRatesR")
 ### Interest rates from NBP website:
 
 ```{r}
-pacman::p_load_gh("zzawadz/nbpInterestRatesR")
+pacman::p_load_gh("zzawadz/nbpir")
 
 tail(get_nbp_interest_rates())
 
