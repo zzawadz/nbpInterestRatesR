@@ -24,17 +24,17 @@ pacman::p_load_gh("zzawadz/nbpir")
 ```{r}
 pacman::p_load_gh("zzawadz/nbpir")
 
-tail(get_nbp_interest_rates())
+tail(nbp_interest_rates())
 
 # reference rate:
-tail(get_nbp_interest_rates("ref"))
+tail(nbp_interest_rates("ref"))
 
 ```
 
 ### Maximum interest rate for loans in Poland
 
 ```{r}
-tail(get_max_loan())
+tail(nbp_max_loan())
 ```
 
 ### Utility functions:
@@ -42,11 +42,11 @@ tail(get_max_loan())
 ```{r}
 
 # get data:
-ret = get_nbp_interest_rates()
+ret = nbp_interest_rates()
 
 # Convert xts to tbl and keep the date
-tail(xts2tbl(ret))
+tail(nbp_xts2tbl(ret))
 
 # expand to daily data:
-tail(expand_daily(ret))
+tail(nbp_expand_daily(ret))
 ```

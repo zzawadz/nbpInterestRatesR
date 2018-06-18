@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Convert xts to tibble. — xts2tbl • nbpir</title>
+<title>Download interest rates from National Bank of Poland. — nbp_interest_rates • nbpir</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Convert xts to tibble. — xts2tbl" />
+<meta property="og:title" content="Download interest rates from National Bank of Poland. — nbp_interest_rates" />
 
-<meta property="og:description" content="Adds column with dates to the first position to after conversion to tibble." />
+<meta property="og:description" content="This functions download various interest rates from NBP (National Bank of Poland) as a xts object." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nbpir</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0</span>
       </span>
     </div>
 
@@ -92,56 +92,48 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Convert xts to tibble.</h1>
+    <h1>Download interest rates from National Bank of Poland.</h1>
     
-    <div class="hidden name"><code>xts2tbl.Rd</code></div>
+    <div class="hidden name"><code>nbp_interest_rates.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Adds column with dates to the first position to after conversion to tibble.</p>
+    <p>This functions download various interest rates from NBP (National Bank of Poland) as a xts object.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>xts2tbl</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>nbp_interest_rates</span>(<span class='kw'>types</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"ref"</span>, <span class='st'>"lom"</span>, <span class='st'>"dep"</span>, <span class='st'>"red"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>xts object.</p></td>
+      <th>types</th>
+      <td><p>DESCRIPTION.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>tbl_df object.</p>
+    <p>xts object.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='no'>x</span> <span class='kw'>=</span> <span class='fu'><a href='get_nbp_interest_rates.html'>get_nbp_interest_rates</a></span>()
-<span class='fu'>tail</span>(<span class='fu'>xts2tbl</span>(<span class='no'>x</span>))</div><div class='output co'>#&gt; # A tibble: 6 x 5
-#&gt;   date          ref    lom     dep    red
-#&gt;   &lt;date&gt;      &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
-#&gt; 1 2013-03-07 0.0325 0.0475 0.0175  0.0350
-#&gt; 2 2013-05-09 0.0300 0.0450 0.0150  0.0325
-#&gt; 3 2013-06-06 0.0275 0.0425 0.0125  0.0300
-#&gt; 4 2013-07-04 0.0250 0.0400 0.0100  0.0275
-#&gt; 5 2014-10-09 0.0200 0.0300 0.0100  0.0225
-#&gt; 6 2015-03-05 0.0150 0.0250 0.00500 0.0175</div><div class='input'>
-<span class='no'>dx</span> <span class='kw'>=</span> <span class='fu'><a href='expand_daily.html'>expand_daily</a></span>(<span class='no'>x</span>)
-<span class='fu'>tail</span>(<span class='fu'>xts2tbl</span>(<span class='no'>dx</span>))</div><div class='output co'>#&gt; # A tibble: 6 x 5
-#&gt;   date          ref    lom     dep    red
-#&gt;   &lt;date&gt;      &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
-#&gt; 1 2018-06-13 0.0150 0.0250 0.00500 0.0175
-#&gt; 2 2018-06-14 0.0150 0.0250 0.00500 0.0175
-#&gt; 3 2018-06-15 0.0150 0.0250 0.00500 0.0175
-#&gt; 4 2018-06-16 0.0150 0.0250 0.00500 0.0175
-#&gt; 5 2018-06-17 0.0150 0.0250 0.00500 0.0175
-#&gt; 6 2018-06-18 0.0150 0.0250 0.00500 0.0175</div><div class='input'>
-
+<span class='fu'>tail</span>(<span class='fu'>nbp_interest_rates</span>(<span class='st'>"ref"</span>))</div><div class='output co'>#&gt;               ref
+#&gt; 2013-03-07 0.0325
+#&gt; 2013-05-09 0.0300
+#&gt; 2013-06-06 0.0275
+#&gt; 2013-07-04 0.0250
+#&gt; 2014-10-09 0.0200
+#&gt; 2015-03-05 0.0150</div><div class='input'><span class='fu'>tail</span>(<span class='fu'>nbp_interest_rates</span>(<span class='fu'>c</span>(<span class='st'>"ref"</span>,<span class='st'>"lom"</span>)))</div><div class='output co'>#&gt;               ref    lom
+#&gt; 2013-03-07 0.0325 0.0475
+#&gt; 2013-05-09 0.0300 0.0450
+#&gt; 2013-06-06 0.0275 0.0425
+#&gt; 2013-07-04 0.0250 0.0400
+#&gt; 2014-10-09 0.0200 0.0300
+#&gt; 2015-03-05 0.0150 0.0250</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

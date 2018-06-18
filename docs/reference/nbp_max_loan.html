@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Expand xts do daily periodicity. — expand_daily • nbpir</title>
+<title>Maximum interest rates for loans in Poland — nbp_max_loan • nbpir</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Expand xts do daily periodicity. — expand_daily" />
+<meta property="og:title" content="Maximum interest rates for loans in Poland — nbp_max_loan" />
 
-<meta property="og:description" content="Expand xts do daily periodicity." />
+<meta property="og:description" content="Get time series with the maximum interest rates for loans in Poland." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -61,7 +61,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">nbpir</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.2.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.3.0</span>
       </span>
     </div>
 
@@ -92,55 +92,46 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Expand xts do daily periodicity.</h1>
+    <h1>Maximum interest rates for loans in Poland</h1>
     
-    <div class="hidden name"><code>expand_daily.Rd</code></div>
+    <div class="hidden name"><code>nbp_max_loan.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Expand xts do daily periodicity.</p>
+    <p>Get time series with the maximum interest rates for loans in Poland.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>expand_daily</span>(<span class='no'>x</span>, <span class='kw'>enddate</span> <span class='kw'>=</span> <span class='st'>"today"</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>x</th>
-      <td><p>xts object</p></td>
-    </tr>
-    <tr>
-      <th>enddate</th>
-      <td><p>last date.</p></td>
-    </tr>
-    </table>
-    
+    <pre class="usage"><span class='fu'>nbp_max_loan</span>()</pre>
+        
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>xts</p>
+    <p>This function returns a time series in xts format with values of maximum interest rate for loans in Poland.</p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Before 2016-01-01 maximum interest rate for loans in Poland was defined as a 4 * lombard rate. After that date it is defined as a 2 * reference rate + 3.5.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='no'>x</span> <span class='kw'>=</span> <span class='fu'><a href='get_nbp_interest_rates.html'>get_nbp_interest_rates</a></span>()
-<span class='fu'>tail</span>(<span class='fu'>expand_daily</span>(<span class='no'>x</span>))</div><div class='output co'>#&gt;              ref   lom   dep    red
-#&gt; 2018-06-13 0.015 0.025 0.005 0.0175
-#&gt; 2018-06-14 0.015 0.025 0.005 0.0175
-#&gt; 2018-06-15 0.015 0.025 0.005 0.0175
-#&gt; 2018-06-16 0.015 0.025 0.005 0.0175
-#&gt; 2018-06-17 0.015 0.025 0.005 0.0175
-#&gt; 2018-06-18 0.015 0.025 0.005 0.0175</div><div class='input'>
+<span class='fu'>tail</span>(<span class='fu'>nbp_max_loan</span>())</div><div class='output co'>#&gt;            maxLoan
+#&gt; 2013-05-09    0.18
+#&gt; 2013-06-06    0.17
+#&gt; 2013-07-04    0.16
+#&gt; 2014-10-09    0.12
+#&gt; 2015-03-05    0.10
+#&gt; 2016-01-01    7.03</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#details">Details</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>

@@ -24,7 +24,7 @@ Usage:
 
     pacman::p_load_gh("zzawadz/nbpir")
 
-    tail(get_nbp_interest_rates())
+    tail(nbp_interest_rates())
 
     ##               ref    lom    dep    red
     ## 2013-03-07 0.0325 0.0475 0.0175 0.0350
@@ -35,7 +35,7 @@ Usage:
     ## 2015-03-05 0.0150 0.0250 0.0050 0.0175
 
     # reference rate:
-    tail(get_nbp_interest_rates("ref"))
+    tail(nbp_interest_rates("ref"))
 
     ##               ref
     ## 2013-03-07 0.0325
@@ -47,7 +47,7 @@ Usage:
 
 ### Maximum interest rate for loans in Poland
 
-    tail(get_max_loan())
+    tail(nbp_max_loan())
 
     ##            maxLoan
     ## 2013-05-09    0.18
@@ -60,10 +60,10 @@ Usage:
 ### Utility functions:
 
     # get data:
-    ret = get_nbp_interest_rates()
+    ret = nbp_interest_rates()
 
     # Convert xts to tbl and keep the date
-    tail(xts2tbl(ret))
+    tail(nbp_xts2tbl(ret))
 
     ## # A tibble: 6 x 5
     ##   date          ref    lom     dep    red
@@ -76,7 +76,7 @@ Usage:
     ## 6 2015-03-05 0.0150 0.0250 0.00500 0.0175
 
     # expand to daily data:
-    tail(expand_daily(ret))
+    tail(nbp_expand_daily(ret))
 
     ##              ref   lom   dep    red
     ## 2018-06-13 0.015 0.025 0.005 0.0175

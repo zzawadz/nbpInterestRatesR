@@ -10,10 +10,10 @@
 #' @importFrom lubridate ymd
 #' @examples
 #'
-#' tail(get_nbp_interest_rates("ref"))
-#' tail(get_nbp_interest_rates(c("ref","lom")))
+#' tail(nbp_interest_rates("ref"))
+#' tail(nbp_interest_rates(c("ref","lom")))
 #'
-get_nbp_interest_rates = function(types = c("ref","lom","dep","red"))
+nbp_interest_rates = function(types = c("ref","lom","dep","red"))
 {
   xmlData = read_xml("http://www.nbp.pl/xml/stopy_procentowe_archiwum.xml")
 
@@ -46,10 +46,10 @@ get_nbp_interest_rates = function(types = c("ref","lom","dep","red"))
 #' @return xts
 #' @examples
 #'
-#' x = get_nbp_interest_rates()
-#' tail(expand_daily(x))
+#' x = nbp_interest_rates()
+#' tail(nbp_expand_daily(x))
 #'
-expand_daily = function(x, enddate = "today")
+nbp_expand_daily = function(x, enddate = "today")
 {
   if(enddate == "today")
   {
@@ -82,14 +82,14 @@ expand_daily = function(x, enddate = "today")
 #' @return tbl_df object.
 #' @examples
 #'
-#' x = get_nbp_interest_rates()
-#' tail(xts2tbl(x))
+#' x = nbp_interest_rates()
+#' tail(nbp_xts2tbl(x))
 #'
-#' dx = expand_daily(x)
-#' tail(xts2tbl(dx))
+#' dx = nbp_expand_daily(x)
+#' tail(nbp_xts2tbl(dx))
 #'
 #'
-xts2tbl = function(x)
+nbp_xts2tbl = function(x)
 {
   dt = as_data_frame(x)
   bind_cols(data_frame(date = index(x)), dt)
@@ -111,11 +111,11 @@ xts2tbl = function(x)
 #' @export
 #' @examples
 #'
-#' tail(get_max_loan())
+#' tail(nbp_max_loan())
 #'
-get_max_loan = function()
+nbp_max_loan = function()
 {
-  ir = get_nbp_interest_rates(c("ref","lom"))
+  ir = nbp_interest_rates(c("ref","lom"))
   lom = (ir[,"lom"] * 4)["/2015"]
   colnames(lom) = "maxLoan"
 
