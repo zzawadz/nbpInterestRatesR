@@ -47,10 +47,8 @@ nbp_read_inflation <- function(path, interval = c("monthly", "quarterly", "annua
 
 
   get_data <- function(data, idx = 2:6) {
-    description <- data[1:2,]
-    data <- na.omit(data[-c(1:2),])
+    data <- na.omit(data)
 
-    dateColNames <- c("Date", unlist(description[1,])[-1])
     date <- data[[1]]
 
     rawValue <- as.matrix(data[,idx])
@@ -71,10 +69,10 @@ nbp_read_inflation <- function(path, interval = c("monthly", "quarterly", "annua
     result
   }
 
-  if(interval == "annual") type <- "corresponding"
+  if(interval == 3) type <- "corresponding"
 
   idx <- if(type[1] == "corresponding") 2:6 else 2:6 + 5
 
-  data <- read_excel(path, interval)
+  data <- read_excel(path, interval, skip = 2)
   get_data(data, idx)
 }
