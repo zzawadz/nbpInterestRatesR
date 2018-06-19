@@ -1,8 +1,8 @@
 #' Download inflation data from NBP website.
 #'
 #' @param destination A character string with the name where the downloaded file is saved. Tilde-expansion is performed.
+#' @param overwrite if true overwrites the file in the destination path.
 #'
-#' @return
 #' @export
 #' @importFrom utils download.file
 #'
@@ -27,10 +27,10 @@ nbp_inflation_download <- function(destination = sprintf("inflation_nbp-%s.xls",
 #' @param type select method of calculation. 'previous' (default) returns data in relation to the previous month. 'corresponding' returns the values in relation
 #'        to the corresponding interval from previous year.
 #'
-#' @return
 #' @export
 #'
 #' @importFrom readxl read_excel
+#' @importFrom stats setNames na.omit
 #'
 #' @examples
 #'
