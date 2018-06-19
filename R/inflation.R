@@ -2,6 +2,7 @@
 #'
 #' @param destination A character string with the name where the downloaded file is saved. Tilde-expansion is performed.
 #' @param overwrite if true overwrites the file in the destination path.
+#' @param ... other arguments passed to \code{\link{download.file}}
 #'
 #' @export
 #' @importFrom utils download.file

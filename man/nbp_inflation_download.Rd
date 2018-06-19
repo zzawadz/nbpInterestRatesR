@@ -11,6 +11,8 @@ nbp_inflation_download(destination = sprintf("inflation_nbp-\%s.xls",
 \item{destination}{A character string with the name where the downloaded file is saved. Tilde-expansion is performed.}
 
 \item{overwrite}{if true overwrites the file in the destination path.}
+
+\item{...}{other arguments passed to \code{\link{download.file}}}
 }
 \description{
 Download inflation data from NBP website.
